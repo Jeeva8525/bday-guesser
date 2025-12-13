@@ -1,38 +1,65 @@
-.heading{
-    color : #E0C3FC; 
-    font-size : 38px;
+.heading {
+    color: #E0C3FC;
+    font-size: 38px;
 }
 
-.sub-heading{
-    font-size : 25px;
-    color : #00F5FF;
+.sub-heading {
+    font-size: 25px;
+    color: #00F5FF;
 }
 
-.whole-screen{
+.whole-screen {
     height: 100vh;
     width: 100vw;
-    display : flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.747);
 }
 
-.initial-info{
-    display : flex;
-    flex-direction : column;
+
+.initial-info {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     height: 180px;
-    width : 20em;
+    width: 20em;
     justify-content: space-evenly;
-    background-image: linear-gradient(135deg,#cc00ff,#29aaca,#8921ff);
-    border-radius : 10px;
+    /* background-image: linear-gradient(135deg, #cc00ff, #29aaca, #8921ff); */
+    border-radius: 10px;
     margin-bottom: 15px;
-    position: absolute;
+    position: relative;
+    z-index: 1;
 }
 
-.initial-info p{
-    margin : 5px;
+.initial-info::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(135deg, #cc00ff, #29aaca, #8921ff);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    z-index: -2;
+}
+
+.initial-info::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    background-image: conic-gradient(#fe4545,#00ff9b,#0b69ed,#fd0194,#fe4545);
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+    border-radius: 10px;
+    z-index: -2;
+    filter : blur(0.5rem);
+}
+
+.initial-info p {
+    margin: 5px;
 }
 
 .display-container {
@@ -42,7 +69,7 @@
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-columns: 25% 25% 25% 25%;
     margin-bottom: 50px;
-    border-radius : 20px;
+    border-radius: 20px;
 }
 
 .display-items {
@@ -51,16 +78,16 @@
     background-image: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
     align-items: center;
     border: 1px solid black;
-    border-radius : 5px;
+    border-radius: 5px;
 }
 
-.answer-box{
-    height : 50px;
-    width : 170px;
-    background-image: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%) ;
-    border-radius : 10px;
-    display : flex;
+.answer-box {
+    height: 50px;
+    width: 170px;
+    background-image: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
+    border-radius: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom : 10px;
+    margin-bottom: 10px;
 }
